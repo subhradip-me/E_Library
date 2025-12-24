@@ -1,8 +1,25 @@
-HELP.md
+# Maven
 target/
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Gradle
+.gradle
+**/build/
+!src/**/build/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
 
 ### STS ###
 .apt_generated
@@ -18,6 +35,8 @@ target/
 *.iws
 *.iml
 *.ipr
+out/
+*.class
 
 ### NetBeans ###
 /nbproject/private/
@@ -31,3 +50,79 @@ build/
 
 ### VS Code ###
 .vscode/
+*.code-workspace
+
+### macOS ###
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+### Windows ###
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+### Linux ###
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+### Application Specific ###
+# User uploaded files
+src/main/resources/static/uploads/covers/*
+!src/main/resources/static/uploads/covers/.gitkeep
+src/main/resources/static/uploads/pdfs/*
+!src/main/resources/static/uploads/pdfs/.gitkeep
+
+# Sensitive configuration files
+application-local.properties
+application-prod.properties
+application-secret.properties
+
+# Log files
+logs/
+*.log
+*.log.*
+spring.log
+
+# H2 Database files
+*.db
+*.trace.db
+*.lock.db
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~.nib
+local.properties
+
+# Package Files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Documentation
+HELP.md
+
+# Test coverage
+*.cover
+.coverage
+htmlcov/
