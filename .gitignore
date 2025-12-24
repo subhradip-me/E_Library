@@ -1,0 +1,12 @@
+# Eclipse IDE
+.metadata/
+.settings/
+.project
+.classpath
+
+# VS Code
+.vscode/
+
+# OS Files
+.DS_Store
+Thumbs.db
