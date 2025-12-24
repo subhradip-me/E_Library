@@ -1,0 +1,167 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Library • Subscription Successful</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        :root {
+            --cream: #f5f1ed;
+            --dark-brown: #2c2416;
+            --gold: #a68a64;
+            --sage: #6b7d6f;
+            --light-gray: #e8e3dd;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--cream) 0%, #faf8f5 50%);
+            color: var(--dark-brown);
+            min-height: 100vh;
+        }
+
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .success-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--sage) 0%, var(--gold) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            font-size: 3.5rem;
+            color: white;
+            box-shadow: 0 10px 40px rgba(107, 125, 111, 0.3);
+        }
+
+        .cta-button {
+            padding: 14px 32px;
+            border: none;
+            border-radius: 2px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button-primary {
+            background: var(--dark-brown);
+            color: var(--cream);
+        }
+
+        .cta-button-primary:hover {
+            background: var(--sage);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(44, 36, 22, 0.2);
+        }
+
+        .cta-button-secondary {
+            background: white;
+            color: var(--dark-brown);
+            border: 1px solid var(--light-gray);
+        }
+
+        .cta-button-secondary:hover {
+            background: var(--cream);
+            border-color: var(--gold);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <span class="text-3xl">📚</span>
+                <h1 class="text-2xl font-bold playfair text-amber-600">E-Library</h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Success Content -->
+    <section class="max-w-3xl mx-auto px-6 py-16">
+        <div class="bg-white rounded-sm shadow-2xl p-8 md:p-16 text-center">
+            <!-- Success Icon -->
+            <div class="success-icon mb-8">✓</div>
+            
+            <!-- Success Message -->
+            <div class="w-16 h-px bg-amber-600 mx-auto mb-6"></div>
+            <h1 class="text-4xl md:text-5xl font-light playfair text-stone-900 mb-4">Subscription Successful!</h1>
+            <p class="text-lg text-stone-600 mb-12">
+                Thank you for subscribing to E-Library. Your subscription is now active.
+            </p>
+
+            <!-- Subscription Details -->
+            <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-sm p-8 mb-8 text-left">
+                <h3 class="text-xl font-semibold playfair text-stone-900 mb-6 text-center">Subscription Details</h3>
+                
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center pb-3 border-b border-stone-200">
+                        <span class="text-sm font-medium text-stone-600">Payment ID:</span>
+                        <span class="text-sm font-semibold text-stone-900">${paymentId}</span>
+                    </div>
+                    
+                    <div class="flex justify-between items-center pb-3 border-b border-stone-200">
+                        <span class="text-sm font-medium text-stone-600">Plan Type:</span>
+                        <span class="text-sm font-semibold text-stone-900">${planType}</span>
+                    </div>
+                    
+                    <div class="flex justify-between items-center pb-3 border-b border-stone-200">
+                        <span class="text-sm font-medium text-stone-600">Amount Paid:</span>
+                        <span class="text-lg font-bold playfair text-amber-600">₹${amount}</span>
+                    </div>
+                    
+                    <div class="flex justify-between items-center pb-3 border-b border-stone-200">
+                        <span class="text-sm font-medium text-stone-600">Start Date:</span>
+                        <span class="text-sm font-semibold text-stone-900">${startDate}</span>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm font-medium text-stone-600">End Date:</span>
+                        <span class="text-sm font-semibold text-stone-900">${endDate}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            
+                <a href="${pageContext.request.contextPath}/home" class="cta-button cta-button-secondary">Browse Books</a>
+            </div>
+
+            <!-- Confirmation Message -->
+            <p class="text-xs text-stone-500 mt-8">
+                A confirmation email has been sent to your registered email address.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-orange-100 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex items-center justify-center gap-3 mb-6">
+                <span class="text-3xl">📚</span>
+                <h3 class="text-2xl font-bold playfair text-amber-600">E-Library</h3>
+            </div>
+            <p class="text-sm opacity-60">Established 2024. Where literature lives.</p>
+        </div>
+    </footer>
+</body>
+</html>

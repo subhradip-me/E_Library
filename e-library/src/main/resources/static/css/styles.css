@@ -1,0 +1,21 @@
+/* styles.css - Boilerplate CSS */
+@import url('https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Lavishly Yours', cursive, Arial, Helvetica, sans-serif;
+    background-color: #f9f9f9;
+    color: #222;
+}
+
+.lavishly {
+    font-family: 'Lavishly Yours', cursive;
+    font-size: 2rem;
+    line-height: 1.6;
+}

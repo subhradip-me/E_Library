@@ -1,0 +1,256 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Library • Choose Your Plan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        :root {
+            --cream: #f5f1ed;
+            --dark-brown: #2c2416;
+            --gold: #a68a64;
+            --sage: #6b7d6f;
+            --light-gray: #e8e3dd;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--cream) 0%, #faf8f5 50%);
+            color: var(--dark-brown);
+            min-height: 100vh;
+        }
+
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .pricing-card {
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(44, 36, 22, 0.15);
+        }
+
+        .featured-card {
+            border: 2px solid var(--gold);
+            position: relative;
+        }
+
+        .badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: white;
+            padding: 4px 20px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .price-amount {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--dark-brown);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 8px 0;
+        }
+
+        .check-icon {
+            width: 20px;
+            height: 20px;
+            background: rgba(166, 138, 100, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 12px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .cta-button {
+            width: 100%;
+            padding: 14px 24px;
+            border: none;
+            border-radius: 2px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .cta-button-primary {
+            background: var(--dark-brown);
+            color: var(--cream);
+        }
+
+        .cta-button-primary:hover {
+            background: var(--sage);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(44, 36, 22, 0.2);
+        }
+
+        .cta-button-secondary {
+            background: white;
+            color: var(--dark-brown);
+            border: 1px solid var(--light-gray);
+        }
+
+        .cta-button-secondary:hover {
+            background: var(--cream);
+            border-color: var(--gold);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <%@ include file="/WEB-INF/views/includes/reader/header.jsp" %>
+
+    <!-- Hero Section -->
+    <section class="max-w-7xl mx-auto px-6 py-16 text-center">
+        <div class="w-16 h-px bg-amber-600 mx-auto mb-8"></div>
+        <h1 class="text-5xl md:text-6xl font-light playfair text-stone-900 mb-6 tracking-tight">Choose Your Plan</h1>
+        <p class="text-lg text-green-700 max-w-2xl mx-auto mb-12">
+            Select the perfect reading experience for you. All plans include access to our curated collection.
+        </p>
+    </section>
+
+    <!-- Pricing Cards -->
+    <section class="max-w-7xl mx-auto px-6 pb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            
+            <!-- Monthly Plan -->
+            <div class="pricing-card bg-white rounded-sm shadow-lg p-8 relative">
+                <div class="mb-6">
+                    <h3 class="text-2xl font-semibold playfair text-stone-900 mb-2">Monthly Plan</h3>
+                    <p class="text-sm text-stone-600">Perfect for flexible reading</p>
+                </div>
+
+                <div class="mb-8">
+                    <div class="flex items-baseline gap-2">
+                        <span class="price-amount">₹199</span>
+                        <span class="text-stone-500 text-sm font-medium">/month</span>
+                    </div>
+                    <p class="text-xs text-stone-600 mt-2">Billed monthly</p>
+                </div>
+
+                <a href="${pageContext.request.contextPath}/subscription/checkout/monthly" class="cta-button cta-button-secondary mb-8">Subscribe Monthly</a>
+
+                <div class="space-y-3">
+                    <div class="feature-item">
+                        <span class="check-icon">✓</span>
+                        <span class="text-sm text-stone-700">Unlimited book access</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="check-icon">✓</span>
+                        <span class="text-sm text-stone-700">All categories</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="check-icon">✓</span>
+                        <span class="text-sm text-stone-700">Read online</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="check-icon">✓</span>
+                        <span class="text-sm text-stone-700">Cancel anytime</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="check-icon">✓</span>
+                        <span class="text-sm text-stone-700">Customer support</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Annual Plan (Featured) -->
+            <div class="pricing-card featured-card bg-white rounded-sm shadow-xl p-8 relative">
+                <div class="badge">Best Value</div>
+                
+                <div class="mb-6 pt-4">
+                    <h3 class="text-2xl font-semibold playfair text-stone-900 mb-2">Annual Plan</h3>
+                    <p class="text-sm text-stone-600">For dedicated book lovers</p>
+                </div>
+
+                <div class="mb-8">
+                    <div class="flex items-baseline gap-2">
+                        <span class="price-amount">₹1,999</span>
+                        <span class="text-stone-500 text-sm font-medium">/year</span>
+                    </div>
+                    <p class="text-xs text-green-700 font-semibold mt-2">Save ₹389 annually!</p>
+                </div>
+
+                <a href="${pageContext.request.contextPath}/subscription/checkout/annual" class="cta-button cta-button-primary mb-8">Subscribe Annually</a>
+
+                <div class="space-y-3">
+                    <div class="feature-item">
+                        <span class="check-icon">✓</span>
+                        <span class="text-sm text-stone-700"><strong>Unlimited book access</strong></span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="check-icon">✓</span>
+                        <span class="text-sm text-stone-700">All categories</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="check-icon">✓</span>
+                        <span class="text-sm text-stone-700">Read online & offline</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="check-icon">✓</span>
+                        <span class="text-sm text-stone-700">Priority customer support</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="check-icon">✓</span>
+                        <span class="text-sm text-stone-700">Exclusive content access</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="check-icon">✓</span>
+                        <span class="text-sm text-stone-700">Advanced search & filters</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="check-icon">✓</span>
+                        <span class="text-sm text-stone-700">Personalized reading lists</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-orange-100 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex items-center justify-center gap-3 mb-6">
+                <span class="text-3xl">📚</span>
+                <h3 class="text-2xl font-bold playfair text-amber-600">E-Library</h3>
+            </div>
+            <p class="text-sm opacity-60">Established 2024. Where literature lives.</p>
+        </div>
+    </footer>
+</body>
+</html>

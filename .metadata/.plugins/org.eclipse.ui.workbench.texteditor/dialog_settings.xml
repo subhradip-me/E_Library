@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="hasShownOverlayPopupBefore" value="true"/>
+	<section name="java.lang.Class">
+		<item key="replaceBarOpen" value="true"/>
+		<list key="findhistory">
+			<item value="dele"/>
+			<item value="Recently Added"/>
+			<item value="totalBooks"/>
+			<item value="mb-2"/>
+			<item value="mb-"/>
+			<item value="mb"/>
+			<item value="mt"/>
+			<item value="jstl"/>
+			<item value="&lt;groupId&gt;javax.servlet&lt;/groupId&gt;"/>
+			<item value="&lt;dependency&gt;"/>
+		</list>
+		<list key="replacehistory">
+			<item value="Most read"/>
+			<item value="mb-1.7"/>
+		</list>
+	</section>
+</section>
