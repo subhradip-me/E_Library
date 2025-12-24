@@ -30,6 +30,18 @@ gradle-app.setting
 .springBeans
 .sts4-cache
 
+### Eclipse ###
+.metadata/
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.loadpath
+.recommenders
+
 ### IntelliJ IDEA ###
 .idea
 *.iws
